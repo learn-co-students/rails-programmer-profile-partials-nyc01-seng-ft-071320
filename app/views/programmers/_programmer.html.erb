@@ -1,0 +1,25 @@
+<h3>
+  <%= programmer.name %> | <%= formatted_date(programmer.birth_date) %> - <%= formatted_date(programmer.death_date) %>
+</h3>
+
+<div class="row jumbotron">
+
+  <div class="col-md-3">
+    <%= image_tag programmer.image, height: '250px', class:"profile-image" %>
+  </div>
+
+  <div class="col-md-9 programmer-info">
+
+    <%= render partial: 'attribute', locals: {attribute_text: "Home Country", attribute: programmer.home_country} %><br>
+
+    <%= render partial: 'attribute', locals: {attribute_text: "Quote", attribute: programmer.quote} %><br>
+
+    <%= render partial: 'attribute', locals: {attribute_text: "Claim to Fame", attribute: programmer.claim_to_fame} %>
+
+    <p>
+    <%= link_to "Learn more about #{programmer.name}", programmer.wikipedia_page, target: '_blank' %>
+    </p>
+
+  </div>
+</div>
+
